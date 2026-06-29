@@ -90,6 +90,28 @@ export default async function RootLayout({
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <head>
+        import './globals.css'
+export const metadata = {
+  title: 'KVideo',
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="zh">
+      <head>
+        {/* 谷歌广告全局脚本，client替换成你的ca-pub */}
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-你的发布商ID`}
+          crossOrigin="anonymous"
+        ></script>
+      </head>
+      <body className="bg-black text-white">
+        {children}
+      </body>
+    </html>
+  )
+}
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
         {/* Apple PWA Support */}
